@@ -1,18 +1,33 @@
+const { GraphQLScalarType } = require("graphql");
+
 const userResolvers = {
+  //todos os tipos escalares do graphql tem essas prorpiedades internamente
+  DateTime: new GraphQLScalarType({
+    name: "DateTime",
+    description: "String de data e hora no formato ISO-8601",
+    //pega o dado da base de dados
+    serialize: (value) => value.toISOString(),
+    //pega o dado do input
+    parseValue: (value) => new Date(value),
+    parseLiteral: (ast) => new Date(ast.value),
+  }),
   Query: {
     // context  //info
     users: (root, args, { dataSources }) => dataSources.UsersAPI.getUsers(),
 
-    user: (root, { id }, { dataSources }) => dataSources.UsersAPI.getUserById(id)
-},
+    user: (root, { id }, { dataSources }) =>
+      dataSources.UsersAPI.getUserById(id),
+  },
   Mutation: {
-    adicionaUser: async (root, user, { dataSources }) => dataSources.UsersAPI.adicionaUser(user),
+    adicionaUser: async (root, user, { dataSources }) =>
+      dataSources.UsersAPI.adicionaUser(user),
 
-    atualizaUser: async (root, novosDados, { dataSources }) => dataSources.UsersAPI.atualizaUser(novosDados),
+    atualizaUser: async (root, novosDados, { dataSources }) =>
+      dataSources.UsersAPI.atualizaUser(novosDados),
 
-    deletaUser: async (root, {id}, {dataSources}) => dataSources.UsersAPI.deletaUser(id)
-
-    }
-  };
+    deletaUser: async (root, { id }, { dataSources }) =>
+      dataSources.UsersAPI.deletaUser(id),
+  },
+};
 
 module.exports = userResolvers;

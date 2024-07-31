@@ -46,9 +46,14 @@ class UsersAPI extends RESTDataSource {
     };
   }
 
+  // Teste de tratamento de erro
   async deletaUser(id) {
-    await this.delete(`users/${id}`);
+    try {
+        await this.delete(`users/${id}`);
     return id;
+    } catch (error) {
+        return (`O Id informado não existe- ${error}`)
+    }
   }
 }
 

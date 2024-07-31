@@ -41,6 +41,22 @@
       "ativo": true,
       "email": "m@m.com",
       "role": 2
+    },
+    {
+      "nome": "Marcelly",
+      "ativo": true,
+      "email": "m@m.com",
+      "role": 1,
+      "createdAt": "2020-09-22T00:00:00.000Z",
+      "id": 7
+    },
+    {
+      "nome": "Marcelly",
+      "ativo": true,
+      "email": "m@m.com",
+      "role": 2,
+      "createdAt": "2020-09-22T00:00:00.000Z",
+      "id": 8
     }
   ],
   "roles": [
