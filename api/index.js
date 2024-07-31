@@ -1,6 +1,11 @@
 //rodar api:
 // npx json-server --watch api/data/dados.json
 
+// O Schema é onde definimos o que pode ser feito no servidor pgraphql
+// O resolver é o objeto onde implementamos esse esquema
+// Cada campo do schema precisa ter seu próprio resolver
+
+
 const { ApolloServer } = require("apollo-server");
 const userSchema = require("./user/schema/user.graphql");
 const userResolvers = require("./user/resolvers/userResolvers");
