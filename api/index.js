@@ -3,20 +3,10 @@
 
 const { ApolloServer } = require("apollo-server");
 const userSchema = require("./user/schema/user.graphql");
-
-const users = [
-  {
-    nome: "ana",
-    ativo: true,
-  },
-  {
-    nome: "marcia",
-    ativo: false,
-  },
-];
+const userResolvers = require("./user/resolvers/userResolvers");
 
 const typeDefs = [userSchema];
-const resolvers = {};
+const resolvers = [userResolvers];
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
