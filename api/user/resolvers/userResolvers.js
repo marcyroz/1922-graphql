@@ -1,6 +1,12 @@
 const { GraphQLScalarType } = require("graphql");
 
+//os resolvers servem basicamente para implementarmos tudo que existe no schema
 const userResolvers = {
+  RolesType: {
+    ESTUDANTE: "ESTUDANTE",
+    DOCENTE: "DOCENTE",
+    COORDENACAO: "COORDENACAO",
+  },
   //todos os tipos escalares do graphql tem essas prorpiedades internamente
   DateTime: new GraphQLScalarType({
     name: "DateTime",
