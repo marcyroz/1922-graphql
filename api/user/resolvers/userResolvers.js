@@ -25,7 +25,7 @@ const userResolvers = {
       dataSources.UsersAPI.getUserById(id),
   },
   Mutation: {
-    adicionaUser: async (root, user, { dataSources }) =>
+    adicionaUser: async (root, { user }, { dataSources }) =>
       dataSources.UsersAPI.adicionaUser(user),
 
     atualizaUser: async (root, novosDados, { dataSources }) =>

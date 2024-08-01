@@ -11,17 +11,26 @@ scalar DateTime
     createdAt: DateTime
   }
 
-type Role {
+  input UserInput {
+    nome: String
+    ativo: Boolean
+    email: String
+    role: RolesType
+    createdAt: DateTime
+
+  }
+
+  type Role {
     id: ID!
     type: RolesType!  
-}
+  }
 
-enum RolesType {
-  ESTUDANTE
-  DOCENTE
-  COORDENACAO
+  enum RolesType {
+    ESTUDANTE
+    DOCENTE
+    COORDENACAO
 
-}
+  }
 
   type Query {
     users: [User]
@@ -29,9 +38,9 @@ enum RolesType {
   }
 
   type Mutation{
-    adicionaUser(nome: String, ativo: Boolean!, email: String, role: RolesType! createdAt: DateTime): User!
+    adicionaUser(user: UserInput): User!
     
-    atualizaUser(id: ID!, nome: String, ativo: Boolean!, email: String, role: RolesType!): User!
+    atualizaUser(id: ID!, user: UserInput): User!
 
     deletaUser(id: ID!): ID!
   }

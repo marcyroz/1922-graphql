@@ -65,6 +65,22 @@
       "role": 1,
       "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 9
+    },
+    {
+      "nome": "laryssa",
+      "ativo": true,
+      "email": "l@l.com",
+      "role": 1,
+      "createdAt": "2020-09-22T00:00:00.000Z",
+      "id": 10
+    },
+    {
+      "nome": "Aline",
+      "ativo": true,
+      "email": "a@a.com",
+      "role": 1,
+      "createdAt": "2020-09-22T00:00:00.000Z",
+      "id": 11
     }
   ],
   "roles": [
