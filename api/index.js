@@ -1,7 +1,7 @@
 //rodar api:
 // npx json-server --watch api/data/dados.json
 
-// O Schema é onde definimos o que pode ser feito no servidor pgraphql
+// O Schema é onde definimos o que pode ser feito no servidor graphql
 // O resolver é o objeto onde implementamos esse esquema
 // Cada campo do schema precisa ter seu próprio resolver
 

@@ -4,6 +4,10 @@ class UsersAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = "http://localhost:3000";
+    this.respostaCustom = {
+      code: 200,
+      mensagem: "Operação efetuada com sucesso",
+    };
   }
 
   async getUsers() {
@@ -41,18 +45,24 @@ class UsersAPI extends RESTDataSource {
       role: role[0].id,
     });
     return {
-      ...novosDados.user,
-      role: role[0],
+      ...this.respostaCustom,
+      user: {
+        ...novosDados.user,
+        role: role[0],
+      },
     };
   }
 
-  // Teste de tratamento de erro
+  //tratamento de erro dinâmico
   async deletaUser(id) {
     try {
-        await this.delete(`users/${id}`);
-    return id;
+      await this.delete(`users/${id}`);
+      return this.respostaCustom;
     } catch (error) {
-        return (`O Id informado não existe- ${error}`)
+      return {
+        code: error.extensions.response.status,
+        mensagem: "Operação falhou",
+      };
     }
   }
 }

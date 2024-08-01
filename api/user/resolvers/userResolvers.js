@@ -7,6 +7,13 @@ const userResolvers = {
     DOCENTE: "DOCENTE",
     COORDENACAO: "COORDENACAO",
   },
+
+  respostaCustom: {
+    __resolveType(obj, context, info) {
+      return false;
+    },
+  },
+
   //todos os tipos escalares do graphql tem essas prorpiedades internamente
   DateTime: new GraphQLScalarType({
     name: "DateTime",
