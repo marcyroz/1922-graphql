@@ -17,6 +17,10 @@ const turmaSchema = require("./turma/schema/turma.graphql");
 const turmaResolvers = require("./turma/resolvers/turmaResolvers");
 const TurmasAPI = require("./turma/datasource/turma");
 
+const MatriculaSchema = require("./matricula/schema/matricula.graphql")
+// const matriculaResolvers = require("./matricula/resolvers/matriculaResolvers")
+// const MatriculasAPI = require("./matricula/datasource/matricula")
+
 const dbConfig = {
   client: "sqlite3",
   useNullAsDefault: true,
