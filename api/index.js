@@ -28,7 +28,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => {
-    return { UsersAPI: new UsersAPI(), TurmasAPI: new TurmasAPI(dbConfig), MatriculasAPI: new MatriculasAPI() };
+    return { UsersAPI: new UsersAPI(), TurmasAPI: new TurmasAPI(dbConfig), MatriculasAPI: new MatriculasAPI(dbConfig) };
   },
 });
 

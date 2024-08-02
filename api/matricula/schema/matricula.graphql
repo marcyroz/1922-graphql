@@ -12,7 +12,7 @@ type Matricula {
 }
 
 type Mutation {
-    matricularEstudante (estudante: ID!, turm: ID!): RespostaPadrao!
+    matricularEstudante (estudante: ID!, turma: ID!): RespostaPadrao!
 }
 
 `
