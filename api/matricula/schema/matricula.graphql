@@ -11,6 +11,10 @@ type Matricula {
     status: String!
 }
 
+type Mutation {
+    matricularEstudante (estudante: ID!, turm: ID!): RespostaPadrao!
+}
+
 `
 
 module.exports = matriculaSchema
